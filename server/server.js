@@ -15,9 +15,15 @@ app.post('/upload-resume', (req, res) => {
   console.log('Resume Data:', resumeData);
 
   const careerPaths = [
-    { title: 'Software Engineer', skills: ['JavaScript', 'React', 'Node.js'] },
-    { title: 'Data Scientist', skills: ['Python', 'Pandas', 'Machine Learning'] }
-  ];
+  { title: 'Software Engineer', skills: ['JavaScript', 'React', 'Node.js'] },
+  { title: 'Data Scientist', skills: ['Python', 'Pandas', 'Machine Learning'] },
+  { title: 'Front-End Developer', skills: ['HTML', 'CSS', 'JavaScript', 'React'] },
+  { title: 'Back-End Developer', skills: ['Node.js', 'Express', 'MongoDB', 'SQL'] },
+  { title: 'DevOps Engineer', skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'] },
+  { title: 'Product Manager', skills: ['Leadership', 'Communication', 'Agile'] },
+  { title: 'Cybersecurity Specialist', skills: ['Network Security', 'Firewalls', 'Encryption', 'Linux'] },
+  { title: 'AI Researcher', skills: ['Python', 'Machine Learning', 'Deep Learning', 'TensorFlow'] },
+];
 
   const matchedPaths = careerPaths.filter(path =>
     path.skills.every(skill => resumeData.skills.includes(skill))
