@@ -10,6 +10,13 @@ const path = require('path');
 const app = express();
 const port = 3001;
 
+mongoose.connect('mongodb://localhost:27017/resumes', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch((err) => console.error('MongoDB connection error:', err));
+
 app.use(bodyParser.json());
 app.use(cors());
 
